@@ -35,6 +35,7 @@
     "schema-dts": "^1.1.0" 
   },
   "devDependencies": {
+    "@heroicons/react": "^2.0.18",
     "@types/react": "^17.0.49",
     "@types/react-dom": "^17.0.17",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
