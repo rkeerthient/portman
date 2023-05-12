@@ -2,8 +2,7 @@ import * as React from "react";
 import Cta from "../components/cta";
 import { Image } from "@yext/pages/components";
 import BookingBar from "./bookingBar";
-import hours from "./hours";
-
+  
 type Link = {
   label: string;
   url: string;
