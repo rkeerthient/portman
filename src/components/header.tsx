@@ -36,6 +36,7 @@ const Header = ({ _site }: any) => {
     <>
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
+          <a href="index.html">
           <img
             src={c_logoURL}
             alt=""
@@ -44,7 +45,7 @@ const Header = ({ _site }: any) => {
               filter:
                 "invert(47%) sepia(2%) saturate(3354%) hue-rotate(167deg) brightness(103%) contrast(73%)",
             }}
-          />
+          /></a>
           <div className="flex gap-x-10 text-lg font-base">{linkDoms}</div>
         </nav>
       </div>
