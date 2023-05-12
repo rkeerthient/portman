@@ -36,7 +36,7 @@ const Header = ({ _site }: any) => {
     <>
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
-          <a href="index.html">
+          <a href="/index.html">
           <img
             src={c_logoURL}
             alt=""
