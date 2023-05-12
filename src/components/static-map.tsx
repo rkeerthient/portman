@@ -12,14 +12,12 @@ const StaticMap = (props: Coordinates) => {
     <>
       <img
         className="w-full"
-        width="300"
-        height="200"
         src={
           "https://maps.googleapis.com/maps/api/staticmap?center=" +
           `${latitude}` +
           "," +
           `${longitude}` +
-          "&zoom=14&size=600x400&maptype=roadmap&markers=color:red%7Clabel:LL%7C" +
+          "&zoom=14&size=900x150&scale=2&&maptype=roadmap&markers=color:red%7Clabel:LL%7C" +
           `${latitude}` +
           "," +
           `${longitude}` +
