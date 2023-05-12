@@ -50,6 +50,7 @@ export const config: TemplateConfig = {
       "geocodedCoordinate",
       "c_offeredServices.name",
       "c_offeredServices.description",
+      "c_offeredServices.slug",
       "c_featuredServices.name",
       "c_featuredServices.description",
       "c_featuredServices.slug",
