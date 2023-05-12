@@ -55,7 +55,7 @@ const Carousel_Services = (props: any) => {
                     {item.description}
                   </div>
                   <a href={item.slug}>
-                    <div className="mt-4 border rounded-full py-2 px-4 bg-gray-600 text-white w-fit mx-auto hover:bg-white hover:text-gray-600 hover:border-gray-600">
+                    <div className="mt-16 border rounded-full py-2 px-4 bg-gray-600 text-white w-fit mx-auto hover:bg-white hover:text-gray-600 hover:border-gray-600">
                       Read more
                     </div>
                   </a>
