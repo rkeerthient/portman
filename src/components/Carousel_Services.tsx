@@ -40,6 +40,7 @@ const Carousel_Services = (props: any) => {
       },
     ],
   };
+  /*Slider*/
   return (
     <Slider {...settings}>
       {data &&
