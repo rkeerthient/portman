@@ -14,7 +14,7 @@ const Footer = ({ _site }: any) => {
     <footer className="text-white mt-16" style={{ background: "#2b354b" }}>
       <div className="centered-container py-5">
         <div className="section">
-          <div className="grid grid-cols-3 space-x-14">
+          <div className="grid md:grid-cols-3 space-y-6 md:space-y-0 md:space-x-14">
             <div>
               <div className="flex flex-col space-y-6">
                 <div>

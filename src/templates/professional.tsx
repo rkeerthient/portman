@@ -176,10 +176,10 @@ const Professional: Template<TemplateRenderProps> = ({
               ></StaticMap>
             )}
             <div className="grid md:grid-cols-3 px-4 mt-6">
-              <div className="w-2/3 h-1/2">
+              <div className="w-full md:w-2/3 h-1/2">
                 {headshot && <Image image={headshot} />}
               </div>
-              <div>
+              <div className="w-full md:w-auto">
                 <dd className="mt-3 mx-auto font-bold text-xl">{name}</dd>
                 <dd className="mt-2 mx-auto">
                   <span className="gap-2 items-center px-2 py-1 font-medium flex justify-start">
