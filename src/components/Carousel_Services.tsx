@@ -4,13 +4,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Carousel_Services = (props: any) => {
-  const { data } = props;
+  const { data, slidesToShow } = props;
 
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     initialSlide: 0,
     responsive: [

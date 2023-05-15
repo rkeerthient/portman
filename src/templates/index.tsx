@@ -157,7 +157,7 @@ const Location: Template<TemplateRenderProps> = ({
   return (
     <>
       <PageLayout _site={_site}>
-        <div>
+        <div className="w-full">
           <div className="relative">
             {photoGallery && (
               <Image
@@ -165,49 +165,34 @@ const Location: Template<TemplateRenderProps> = ({
                 style={{ height: "100vh-25px" }}
               ></Image>
             )}
-            <div className="absolute right-40 top-1/4 w-1/4 border border-gray-600 border-b-4 p-4">
-              <div className="font-semibold text-2xl mb-2">
+            <div className="absolute left-20 md:left-auto md:right-40 top-1/4 w-3/4 md:w-1/4 border border-gray-600 border-b-4 p-4">
+              <div className="text-lg font-semibold md:text-2xl mb-2">
                 {name} <br /> {address.city}, {address.region}
               </div>
-              <div className="text-lg"> {description}</div>
+              <div className="text-sm md:text-lg"> {description}</div>
             </div>
           </div>
         </div>
         <div className="centered-container">
           <div className="section">
-            <div className="my-8 font-base text-center text-3xl text-gray-600">
-              Featured Services
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              {c_featuredServices &&
-                c_featuredServices.map(
-                  (item: any, index: any) =>
-                    item.description && (
-                      <span key={index}>
-                        <div className="flex flex-col border p-4">
-                          <div className="h-24 text-bold flex justify-center items-center my-auto text-2xl font-base text-gray-600">
-                            {item.name}
-                          </div>
-                          <div className="text-gray-500">
-                            {item.description}
-                          </div>
-                          <a href={item.slug}>
-                            <div className="mt-4 border rounded-full py-2 px-4 bg-gray-600 text-white w-fit mx-auto hover:bg-white hover:text-gray-600 hover:border-gray-600">
-                              Read more
-                            </div>
-                          </a>
-                        </div>
-                      </span>
-                    )
-                )}
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-4">
+            {c_featuredServices && (
+              <>
+                <div className="my-8 font-base text-center text-3xl text-gray-600">
+                  Featured Services
+                </div>
+                <Carousel_Services
+                  slidesToShow={3}
+                  data={c_featuredServices}
+                ></Carousel_Services>
+              </>
+            )}
+            <div className="mt-4 grid md:grid-cols-2 gap-4">
               {paymentOptions && (
                 <div className="flex flex-col">
                   <div className="my-8 font-base text-center text-3xl text-gray-600">
                     Payments options
                   </div>
-                  <div className="flex flex-row flex-wrap gap-16 border-r-2">
+                  <div className="flex flex-row flex-wrap gap-16 md:border-r-2">
                     {paymentOptions.map((item: any, index: any) => (
                       <div key={index} className="flex flex-col text-center">
                         <div className="mx-auto">
@@ -260,7 +245,10 @@ const Location: Template<TemplateRenderProps> = ({
           <div className="my-8 font-base text-center text-3xl text-gray-600">
             Services offered
           </div>
-          <Carousel_Services data={c_offeredServices}></Carousel_Services>
+          <Carousel_Services
+            data={c_offeredServices}
+            slidesToShow={4}
+          ></Carousel_Services>
         </div>
       </PageLayout>
     </>

@@ -175,7 +175,7 @@ const Professional: Template<TemplateRenderProps> = ({
                 longitude={geocodedCoordinate.longitude}
               ></StaticMap>
             )}
-            <div className="grid grid-cols-3 px-4 mt-6">
+            <div className="grid md:grid-cols-3 px-4 mt-6">
               <div className="w-2/3 h-1/2">
                 {headshot && <Image image={headshot} />}
               </div>

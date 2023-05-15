@@ -16,7 +16,7 @@ type bookingBarProps = {
 function BookingBar(props: bookingBarProps) {
   const { address, mainPhone, emailAddress, hours, timezone } = props;
   return (
-    <div className="flex flex-row px-44 justify-between bg-gray-200 py-4">
+    <div className="flex flex-col md:flex-row w-full px-2 md:px-44 md:justify-between bg-gray-200 py-4 space-y-4">
       <div className="items-center flex flex-row gap-4">
         <div className="p-2 border-gray-300 border-2">
           <CiLocationOn />
@@ -37,17 +37,19 @@ function BookingBar(props: bookingBarProps) {
           <div className="text-gray-600">Call us today!</div>
         </div>
       </div>
-     {hours && <div className="items-center flex flex-row gap-4">
-        <div className="p-2 border-gray-300 border-2">
-          <BiTime />
-        </div>
-        <div className="flex flex-col">
-          <div>Opening Hours</div>
-          <div>
-            <HoursText hours={hours} timeZone={timezone} style=""/>
+      {hours && (
+        <div className="items-center flex flex-row gap-4">
+          <div className="p-2 border-gray-300 border-2">
+            <BiTime />
+          </div>
+          <div className="flex flex-col">
+            <div>Opening Hours</div>
+            <div>
+              <HoursText hours={hours} timeZone={timezone} style="" />
+            </div>
           </div>
         </div>
-      </div>}
+      )}
       <div className="items-center flex flex-row gap-4">
         <div className="p-2 border-gray-300 border-2">
           <AiOutlineCalendar />
