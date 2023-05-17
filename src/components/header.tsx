@@ -46,7 +46,7 @@ const Header = ({ _site }: any) => {
       <span className="hidden md:block">
         <div className="centered-container">
           <nav className="py-6 flex items-center justify-between">
-            <a href="/index.html">
+            <a href="/">
               <img
                 src={c_logoURL}
                 alt=""
@@ -57,7 +57,14 @@ const Header = ({ _site }: any) => {
                 }}
               />
             </a>
-            <div className="flex gap-x-10 text-lg font-base">{linkDoms}</div>
+            <div className="flex gap-x-10 text-lg font-base">
+              <a href={"/"}>
+                <div className="py-3 md:pt-0 border-b-2 border-gray-300 px-4   md:border-2 md:border-white hover:text-gray-600 md:hover:rounded-full md:hover:border-2 md:hover:border-gray-500">
+                  Home
+                </div>
+              </a>
+              {linkDoms}
+            </div>
           </nav>
         </div>
         <BookingBar
@@ -70,7 +77,7 @@ const Header = ({ _site }: any) => {
       <span className="block md:hidden ">
         <div className="bg-white  ">
           <nav className="flex flex-col items-center justify-center">
-            <a href="/index.html">
+            <a href="/">
               <img
                 src={c_logoURL}
                 alt=""
