@@ -63,6 +63,7 @@ export const config: TemplateConfig = {
       "c_relatedDoctors.headshot",
       "c_relatedDoctors.mainPhone",
       "c_relatedDoctors.address",
+      "c_relatedDoctors.description",
       "c_relatedDoctors.degrees",
       "c_relatedDoctors.slug",
     ],

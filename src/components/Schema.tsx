@@ -11,8 +11,9 @@ const Schema = (props: any) => {
   const hours = document.hours;
   const paymentOptions = document.paymentOptions;
   const photoGallery = document.photoGallery;
-
+  const dentists: any = [];
   const itemListElement: any = [];
+
   if (document.c_offeredServices) {
     document.c_offeredServices.forEach((item: any) => {
       itemListElement.push({
@@ -35,7 +36,30 @@ const Schema = (props: any) => {
       });
     }
   }
+  if (document.c_relatedDoctors) {
+    document.c_relatedDoctors.forEach((item: any) => {
+      const { name, headshot, description, mainPhone, address, degrees, slug } =
+        item;
 
+      dentists.push({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: address.city,
+          addressRegion: address.region,
+          postalCode: address.postalCode,
+          streetAddress: address.line1,
+        },
+        email: "email@email.con",
+        image: headshot.url,
+        jobTitle: "Dentist",
+        name: name,
+        telephone: mainPhone,
+        url: slug,
+      });
+    });
+  }
   return (
     <>
       <JsonLd<Dentist>
@@ -94,6 +118,13 @@ const Schema = (props: any) => {
           "@context": "https://schema.org",
           "@type": "ItemList",
           itemListElement,
+        }}
+      />
+      <JsonLd<ItemList>
+        item={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: dentists,
         }}
       />
       {/*  <JsonLd<FAQPage>

@@ -26,7 +26,6 @@ export const config: TemplateConfig = {
       "meta",
       "name",
       "slug",
-
       "c_relatedDoctors.name",
       "c_relatedDoctors.headshot",
       "c_relatedDoctors.mainPhone",
