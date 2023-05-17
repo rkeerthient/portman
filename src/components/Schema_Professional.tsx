@@ -33,7 +33,7 @@ const Schema_Professional = (props: any) => {
         name,
         description,
         openingHours: hours ? buildHoursSchema(hours) : "Mo-Sa 9:00-12:00",
-        mainPhone,
+        telephone: mainPhone,
         email: "example@example.com",
         address: {
           "@type": "PostalAddress",
