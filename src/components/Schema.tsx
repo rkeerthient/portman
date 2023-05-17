@@ -1,13 +1,16 @@
 import * as React from "react";
 import { JsonLd } from "react-schemaorg";
-import { ClothingStore, FAQPage, Place, ItemList } from "schema-dts";
-import Product from "../types/products";
+import { Dentist, Place } from "schema-dts";
+
 const Schema = (props: any) => {
   const { document } = props;
-  const name = `${document.name} in ${document.address.city}, ${document.address.region}`;
+  const name = `${document.name}`;
   const address = document.address;
   const telephone = document.mainPhone;
   const description = document.decription;
+  const hours = document.hours;
+  const paymentOptions = document.paymentOptions;
+  const photoGallery = document.photoGallery;
   const faqsList: any = [];
   const productsList: any = [];
   const itemListElement: any = [];
@@ -23,73 +26,66 @@ const Schema = (props: any) => {
     });
   }
 
-  if (document.c_entityCollection) {
-    document.c_entityCollection.forEach((item1: any, index: any) => {
-      item1.c_products.forEach((item: Product, index: any) => {
-        console.log(JSON.stringify(item));
-
-        productsList.push({
-          "@type": "ListItem",
-          position: parseInt(index) + 1,
-          item: {
-            "@type": "Product",
-            name: item.name,
-            image: item.photoGallery && item.photoGallery[0].image.url,
-            category: item.c_category && item.c_category,
-            sku: document.id,
-            aggregateRating: {
-              "@type": "AggregateRating",
-              bestRating: "5",
-              ratingCount: item.c_reviews,
-              ratingValue: item.c_rating,
-            },
-            offers: {
-              "@type": "Offer",
-              availability: "https://schema.org/InStock",
-              price: item.price && item.price.value,
-              priceCurrency: item.price && item.price.currencyCode,
-            },
-          },
-        });
-      });
-    });
-  }
-  console.log(JSON.stringify(productsList));
-
   return (
     <>
-      <JsonLd<ClothingStore>
+      <JsonLd<Dentist>
         item={{
           "@context": "https://schema.org",
-          "@type": "ClothingStore",
+          "@type": "Dentist",
           name,
+          description,
+          openingHours: hours ? buildHoursSchema(hours) : "Mo-Sa 9:00-12:00",
+          telephone,
+          email: "example@example.com",
           address: {
             "@type": "PostalAddress",
-            streetAddress: address.line1,
-            addressLocality: address.city,
             addressRegion: address.region,
             postalCode: address.postalCode,
-            addressCountry: address.countryCode,
+            streetAddress: address.line1,
+            addressLocality: address.city,
           },
-          description: description,
-          openingHours: document.hours
-            ? buildHoursSchema(document.hours)
-            : "Mo,Tu,We,Th 09:00-12:00",
-          telephone: telephone,
-          hasOfferCatalog: {
-            "@type": "OfferCatalog",
-            name: "Store services",
-            itemListElement: itemListElement,
+          paymentAccepted: paymentOptions ? paymentOptions.toString() : "",
+          priceRange: "$$",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: 4.5,
+            reviewCount: 22,
           },
+          image: photoGallery && photoGallery[0],
+          review: [
+            {
+              "@type": "Review",
+              author: "Liam",
+              datePublished: "2020-06-26",
+              description: "Great prices, excellent service",
+              name: "Great dental clinic",
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: 5,
+              },
+            },
+            {
+              "@type": "Review",
+              author: "David",
+              datePublished: "2020-05-16",
+              description:
+                "I am totally satisfied with the quality of service, but the waiting time should be reduced",
+              name: "Waiting time",
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: 4,
+              },
+            },
+          ],
         }}
       />
-      <JsonLd<ItemList>
+      {/* <JsonLd<ItemList>
         item={{
           "@context": "https://schema.org",
           "@type": "ItemList",
           itemListElement: productsList,
         }}
-      />
+      /> */}
       {/*  <JsonLd<FAQPage>
         item={{
           "@context": "https://schema.org",

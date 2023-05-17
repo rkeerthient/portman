@@ -26,6 +26,7 @@ import BookingBar from "../components/bookingBar";
 import { insuranceImages, paymentToIcons } from "../components/icons";
 import Doctors from "../components/Doctors";
 import Carousel_Services from "../components/Carousel_Services";
+import Schema from "../components/Schema";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -135,6 +136,7 @@ const Location: Template<TemplateRenderProps> = ({
   path,
   document,
 }) => {
+  const cpy = document;
   const {
     _site,
     name,
@@ -156,6 +158,7 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
+      <Schema document={cpy}></Schema>
       <PageLayout _site={_site}>
         <div className="w-full">
           <div className="relative">
