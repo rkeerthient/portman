@@ -31,14 +31,14 @@ const Header = ({ _site }: any) => {
   const { c_logoURL, c_header, name, c_relatedFacility } = _site;
   const [showMenu, setShowMenu] = useState(false);
   const linkDoms = c_header.map((link: any) => (
-    <div
-      key={link.label}
-      className="py-3 md:pt-0 border-b-2 border-gray-300 px-4   md:border-2 md:border-white hover:text-gray-600 md:hover:rounded-full md:hover:border-2 md:hover:border-gray-500"
-    >
-      <a href={link.uRL} target="_blank" rel="noreferrer">
+    <a href={link.uRL} rel="noreferrer">
+      <div
+        key={link.label}
+        className="py-3 md:pt-0 border-b-2 border-gray-300 px-4   md:border-2 md:border-white hover:text-gray-600 md:hover:rounded-full md:hover:border-2 md:hover:border-gray-500"
+      >
         {link.label}
-      </a>
-    </div>
+      </div>
+    </a>
   ));
 
   return (
