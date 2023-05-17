@@ -55,8 +55,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     title: `
      About Your Dentist | 
      ${document.name} | 
-     ${document._site.c_relatedFacility[0].address.city}, 
-     ${document._site.c_relatedFacility[0].address.region}`,
+     ${document._site.c_relatedFacility[0].address.city}`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
