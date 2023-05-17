@@ -11,21 +11,30 @@ const Schema = (props: any) => {
   const hours = document.hours;
   const paymentOptions = document.paymentOptions;
   const photoGallery = document.photoGallery;
-  const faqsList: any = [];
-  const productsList: any = [];
+
   const itemListElement: any = [];
-  if (document.services) {
-    document.services.forEach((item: any) => {
+  if (document.c_offeredServices) {
+    document.c_offeredServices.forEach((item: any) => {
       itemListElement.push({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: `${item}`,
+          name: `${item.name}`,
         },
       });
     });
+    if (document.c_featuredServices) {
+      document.c_featuredServices.forEach((item: any) => {
+        itemListElement.push({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: `${item.name}`,
+          },
+        });
+      });
+    }
   }
-  console.log(photoGallery);
 
   return (
     <>
