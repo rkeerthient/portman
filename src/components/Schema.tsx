@@ -47,7 +47,7 @@ const Schema = (props: any) => {
         address: {
           "@type": "PostalAddress",
           addressLocality: address.city,
-          addressRegion: address.region,
+          addressRegion: address.region ? address.region : "",
           postalCode: address.postalCode,
           streetAddress: address.line1,
         },

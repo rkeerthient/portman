@@ -37,7 +37,7 @@ const Schema_Professional = (props: any) => {
         email: "example@example.com",
         address: {
           "@type": "PostalAddress",
-          addressRegion: address.region,
+          addressRegion: address.region ? address.region : "",
           postalCode: address.postalCode,
           streetAddress: address.line1,
           addressLocality: address.city,
