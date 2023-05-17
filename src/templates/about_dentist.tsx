@@ -13,6 +13,7 @@ import {
 import PageLayout from "../components/page-layout";
 import { Image } from "@yext/pages/components";
 import { AtSymbolIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import Schema from "../components/Schema";
 
 export const config: TemplateConfig = {
   stream: {
@@ -74,64 +75,69 @@ const AboutYourDentist: Template<TemplateRenderProps> = ({
   path,
   document,
 }) => {
+  const cpy = document;
+
   const { _site, c_relatedDoctors } = document;
 
   return (
-    <PageLayout _site={_site}>
-      <div className="centered-container">
-        <div className="section space-y-10">
-          {c_relatedDoctors.map((item: any, index: any) => {
-            const {
-              address,
-              degrees,
-              description,
-              headshot,
-              mainPhone,
-              name,
-              slug,
-            } = item;
+    <>
+      <Schema document={cpy}></Schema>
+      <PageLayout _site={_site}>
+        <div className="centered-container">
+          <div className="section space-y-10">
+            {c_relatedDoctors.map((item: any, index: any) => {
+              const {
+                address,
+                degrees,
+                description,
+                headshot,
+                mainPhone,
+                name,
+                slug,
+              } = item;
 
-            return (
-              <div
-                className="flex flex-row justify-evenly space-x-4"
-                key={index}
-              >
-                <div className="!w-1/4">
-                  <Image image={headshot}></Image>
+              return (
+                <div
+                  className="flex flex-row justify-evenly space-x-4"
+                  key={index}
+                >
+                  <div className="!w-1/4">
+                    <Image image={headshot}></Image>
+                  </div>
+                  <div className="w-3/4 py-4 flex flex-col justify-between">
+                    <div>
+                      <div className="text-3xl font-bold">{name}</div>
+                      <hr className="mt-2 " />
+                    </div>
+                    <div className="flex flex-row space-x-4">
+                      <div className="gap-2 items-center px-2 py-1 font-medium flex justify-start">
+                        <PhoneIcon className="h-3 w-3" />
+                        {mainPhone}
+                      </div>
+                      <div className="gap-2 items-center px-2 py-1 font-medium flex justify-start">
+                        <AtSymbolIcon className="h-3 w-3" />
+                        {"person@email.com"}
+                      </div>
+                    </div>
+                    <div>
+                      {description && description.length >= 400
+                        ? description.slice(0, 400)
+                        : description ||
+                          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias repellendus vero eligendi esse qui nam veritatis, corrupti aperiam sequi fuga cupiditate magnam doloribus? Rem mollitia magnam cumque eos in fuga?"}
+                    </div>
+                    <a href={slug}>
+                      <div className=" border  py-2 px-4 bg-gray-600 text-white w-fit   hover:bg-white hover:text-gray-600 hover:border-gray-600">
+                        Learn more
+                      </div>
+                    </a>
+                  </div>
                 </div>
-                <div className="w-3/4 py-4 flex flex-col justify-between">
-                  <div>
-                    <div className="text-3xl font-bold">{name}</div>
-                    <hr className="mt-2 " />
-                  </div>
-                  <div className="flex flex-row space-x-4">
-                    <div className="gap-2 items-center px-2 py-1 font-medium flex justify-start">
-                      <PhoneIcon className="h-3 w-3" />
-                      {mainPhone}
-                    </div>
-                    <div className="gap-2 items-center px-2 py-1 font-medium flex justify-start">
-                      <AtSymbolIcon className="h-3 w-3" />
-                      {"person@email.com"}
-                    </div>
-                  </div>
-                  <div>
-                    {description && description.length >= 400
-                      ? description.slice(0, 400)
-                      : description ||
-                        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias repellendus vero eligendi esse qui nam veritatis, corrupti aperiam sequi fuga cupiditate magnam doloribus? Rem mollitia magnam cumque eos in fuga?"}
-                  </div>
-                  <a href={slug}>
-                    <div className=" border  py-2 px-4 bg-gray-600 text-white w-fit   hover:bg-white hover:text-gray-600 hover:border-gray-600">
-                      Learn more
-                    </div>
-                  </a>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </PageLayout>
+      </PageLayout>
+    </>
   );
 };
 

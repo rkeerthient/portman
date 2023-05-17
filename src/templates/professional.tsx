@@ -70,7 +70,10 @@ export const config: TemplateConfig = {
       "c_relatedFacilities.hours",
       "c_relatedFacilities.timezone",
       "c_relatedFacilities.mainPhone",
+      "c_relatedFacilities.paymentOptions",
+      "c_relatedFacilities.photoGallery",
       "c_relatedFacilities.slug",
+      "c_relatedFacilities.description",
       "c_relatedFacilities.c_featuredServices.name",
     ],
     // The entity language profiles that documents will be generated for.
