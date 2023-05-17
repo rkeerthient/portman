@@ -1,6 +1,6 @@
 import * as React from "react";
 import { JsonLd } from "react-schemaorg";
-import { Dentist, Place } from "schema-dts";
+import { Dentist, ItemList, Place } from "schema-dts";
 
 const Schema = (props: any) => {
   const { document } = props;
@@ -89,13 +89,13 @@ const Schema = (props: any) => {
           ],
         }}
       />
-      {/* <JsonLd<ItemList>
+      <JsonLd<ItemList>
         item={{
           "@context": "https://schema.org",
           "@type": "ItemList",
-          itemListElement: productsList,
+          itemListElement,
         }}
-      /> */}
+      />
       {/*  <JsonLd<FAQPage>
         item={{
           "@context": "https://schema.org",
