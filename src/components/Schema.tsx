@@ -25,6 +25,7 @@ const Schema = (props: any) => {
       });
     });
   }
+  console.log(photoGallery);
 
   return (
     <>
@@ -51,7 +52,7 @@ const Schema = (props: any) => {
             ratingValue: 4.5,
             reviewCount: 22,
           },
-          image: photoGallery && photoGallery[0],
+          image: photoGallery && photoGallery[0].image.url,
           review: [
             {
               "@type": "Review",

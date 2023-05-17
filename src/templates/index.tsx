@@ -22,7 +22,6 @@ import { Image } from "@yext/pages/components";
 import * as React from "react";
 import PageLayout from "../components/page-layout";
 import "../index.css";
-import BookingBar from "../components/bookingBar";
 import { insuranceImages, paymentToIcons } from "../components/icons";
 import Doctors from "../components/Doctors";
 import Carousel_Services from "../components/Carousel_Services";
