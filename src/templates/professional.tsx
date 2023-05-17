@@ -33,7 +33,7 @@ import RTF from "../components/RTF";
 import Carousel_Locations from "../components/Carousel_Locations";
 import StaticMap from "../components/static-map";
 import Services_RTF from "../components/Services_RTF";
-
+import Schema_Professional from "../components/Schema_Professional";
 /**
  * Required when Knowledge Graph data is used for a template.
  */
@@ -149,6 +149,7 @@ const Professional: Template<TemplateRenderProps> = ({
   path,
   document,
 }) => {
+  const cpy = document;
   const {
     _site,
     name,
@@ -169,6 +170,7 @@ const Professional: Template<TemplateRenderProps> = ({
 
   return (
     <>
+      <Schema_Professional document={cpy}></Schema_Professional>
       <PageLayout _site={_site}>
         <div className="centered-container">
           <div className="section">
