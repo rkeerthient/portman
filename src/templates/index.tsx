@@ -168,7 +168,7 @@ const Location: Template<TemplateRenderProps> = ({
                 style={{ height: "100vh-25px" }}
               ></Image>
             )}
-            <div className="absolute left-20 md:left-auto md:right-40 top-1/4 w-3/4 md:w-1/4 border border-gray-600 border-b-4 p-4">
+            <div className="text-gray-800 md:text-black backdrop-blur-md bg-white/30 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:left-auto md:right-40 md:top-1/4 w-3/4 md:w-1/4 border border-gray-600 md:border-b-4 p-4 md:transform-none md:-translate-x-0">
               <div className="text-lg font-semibold md:text-2xl mb-2">
                 {name} <br /> {address.city}, {address.region}
               </div>
