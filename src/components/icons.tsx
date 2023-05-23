@@ -21,6 +21,13 @@ export const paymentToIcons: any = {
   MASTERCARD: <FaCcMastercard size={75} color="gray" />,
   SAMSUNGPAY: <SiSamsungpay size={75} color="gray" />,
   VISA: <FaCcVisa size={75} color="gray" />,
+  CHECK: (
+    <img
+      src="https://img.favpng.com/15/18/5/cheque-bank-payment-computer-icons-money-png-favpng-6V3XQtDnEqCdkpXTJYw355AUM.jpg"
+      alt=""
+      style={{ height: "auto", width: "110px" }}
+    />
+  ),
 };
 
 export const insuranceImages: any = {

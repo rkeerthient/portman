@@ -189,13 +189,13 @@ const Location: Template<TemplateRenderProps> = ({
                 ></Carousel_Services>
               </>
             )}
-            <div className="mt-4 grid md:grid-cols-2 gap-4">
+            <div className="mt-4 mx-auto grid md:grid-cols-2 gap-4">
               {paymentOptions && (
                 <div className="flex flex-col">
                   <div className="my-8 font-base text-center text-3xl text-gray-600">
                     Payments options
                   </div>
-                  <div className="flex flex-row flex-wrap gap-16 md:border-r-2">
+                  <div className="flex flex-row flex-wrap gap-16 md:border-r-2 justify-center">
                     {paymentOptions.map((item: any, index: any) => (
                       <div key={index} className="flex flex-col text-center">
                         <div className="mx-auto">
@@ -212,7 +212,7 @@ const Location: Template<TemplateRenderProps> = ({
                   <div className="my-8 font-base text-center text-3xl text-gray-600">
                     Insurance accepted
                   </div>
-                  <div className="flex flex-row flex-wrap gap-8">
+                  <div className="flex flex-row flex-wrap gap-8 justify-center">
                     {insuranceAccepted.map((item: any, index: any) => (
                       <div
                         key={index}
